@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>{{user.name}}</h1>
+
+<form method="get" action="/user/deleted">
+        <button type="text" name="id" value="{{user.userId}}">Удалить</button>
+</form>
+<form method="get" action="/user/add_order">
+    <button type="text" name="id" value="{{user.userId}}">Заказ</button>
+</form>
+</body>
+</html>
