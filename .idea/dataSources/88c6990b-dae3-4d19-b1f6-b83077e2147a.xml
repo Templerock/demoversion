@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="postgres@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.0">
+    <root id="1"/>
+    <database id="2" parent="1" name="postgres">
+      <ObjectId>12029</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema id="3" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2018-02-28.20:27:48.043</IntrospectionTimestamp>
+      <IntrospectionStateNumber>1363</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="4" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="5" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="6" parent="2" name="pg_temp_1">
+      <ObjectId>11215</ObjectId>
+    </schema>
+    <schema id="7" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11216</ObjectId>
+    </schema>
+    <schema id="8" parent="2" name="information_schema">
+      <ObjectId>11480</ObjectId>
+    </schema>
+    <sequence id="9" parent="3" name="hibernate_sequence">
+      <ObjectId>17438</ObjectId>
+      <StateNumber>1359</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <table id="10" parent="3" name="orders">
+      <ObjectId>17417</ObjectId>
+      <StateNumber>1363</StateNumber>
+    </table>
+    <table id="11" parent="3" name="services">
+      <ObjectId>17422</ObjectId>
+      <StateNumber>1361</StateNumber>
+    </table>
+    <table id="12" parent="3" name="services_orders">
+      <ObjectId>17409</ObjectId>
+      <StateNumber>1361</StateNumber>
+    </table>
+    <table id="13" parent="3" name="users">
+      <ObjectId>17430</ObjectId>
+      <StateNumber>1362</StateNumber>
+    </table>
+    <table id="14" parent="3" name="users_orders">
+      <ObjectId>17412</ObjectId>
+      <StateNumber>1363</StateNumber>
+    </table>
+    <column id="15" parent="10" name="order_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1356</StateNumber>
+    </column>
+    <column id="16" parent="10" name="execution_date">
+      <Position>2</Position>
+      <DataType>timestamp|0</DataType>
+      <StateNumber>1356</StateNumber>
+    </column>
+    <column id="17" parent="10" name="order_date">
+      <Position>3</Position>
+      <DataType>timestamp|0</DataType>
+      <StateNumber>1356</StateNumber>
+    </column>
+    <column id="18" parent="10" name="order_status">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>1356</StateNumber>
+    </column>
+    <index id="19" parent="10" name="orders_pkey">
+      <ObjectId>17420</ObjectId>
+      <ColNames>order_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="20" parent="10" name="orders_pkey">
+      <ObjectId>17421</ObjectId>
+      <ColNames>order_id</ColNames>
+      <UnderlyingIndexName>orders_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="21" parent="11" name="service_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1357</StateNumber>
+    </column>
+    <column id="22" parent="11" name="location">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>1357</StateNumber>
+    </column>
+    <column id="23" parent="11" name="name">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>1357</StateNumber>
+    </column>
+    <index id="24" parent="11" name="services_pkey">
+      <ObjectId>17428</ObjectId>
+      <ColNames>service_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="25" parent="11" name="services_pkey">
+      <ObjectId>17429</ObjectId>
+      <ColNames>service_id</ColNames>
+      <UnderlyingIndexName>services_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="26" parent="12" name="service_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1354</StateNumber>
+    </column>
+    <column id="27" parent="12" name="order_id">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1354</StateNumber>
+    </column>
+    <foreign-key id="28" parent="12" name="fklhypm7q02615qavupdmnl52k5">
+      <ObjectId>17445</ObjectId>
+      <ColNames>service_id</ColNames>
+      <RefTableName>services</RefTableName>
+      <RefKeyName>services_pkey</RefKeyName>
+      <RefColNames>service_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="29" parent="12" name="fkme7q4ecer98u6u1u19yv9ax8j">
+      <ObjectId>17440</ObjectId>
+      <ColNames>order_id</ColNames>
+      <RefTableName>orders</RefTableName>
+      <RefKeyName>orders_pkey</RefKeyName>
+      <RefColNames>order_id</RefColNames>
+    </foreign-key>
+    <column id="30" parent="13" name="user_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1358</StateNumber>
+    </column>
+    <column id="31" parent="13" name="car_brand">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>1358</StateNumber>
+    </column>
+    <column id="32" parent="13" name="location">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>1358</StateNumber>
+    </column>
+    <column id="33" parent="13" name="name">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>1358</StateNumber>
+    </column>
+    <column id="34" parent="13" name="order_status">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>1358</StateNumber>
+    </column>
+    <index id="35" parent="13" name="users_pkey">
+      <ObjectId>17436</ObjectId>
+      <ColNames>user_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="36" parent="13" name="users_pkey">
+      <ObjectId>17437</ObjectId>
+      <ColNames>user_id</ColNames>
+      <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="37" parent="14" name="user_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1355</StateNumber>
+    </column>
+    <column id="38" parent="14" name="order_id">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1355</StateNumber>
+    </column>
+    <index id="39" parent="14" name="users_orders_pkey">
+      <ObjectId>17415</ObjectId>
+      <ColNames>order_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="40" parent="14" name="users_orders_pkey">
+      <ObjectId>17416</ObjectId>
+      <ColNames>order_id</ColNames>
+      <UnderlyingIndexName>users_orders_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="41" parent="14" name="fkms88pdhtsiuuusjpeij73f6df">
+      <ObjectId>17450</ObjectId>
+      <ColNames>user_id</ColNames>
+      <RefTableName>users</RefTableName>
+      <RefKeyName>users_pkey</RefKeyName>
+      <RefColNames>user_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="42" parent="14" name="fko2osv03kxanvvu12txosfssj6">
+      <ObjectId>17455</ObjectId>
+      <ColNames>order_id</ColNames>
+      <RefTableName>orders</RefTableName>
+      <RefKeyName>orders_pkey</RefKeyName>
+      <RefColNames>order_id</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
